@@ -58,3 +58,9 @@ Task2
         r
     <dbl>
 1 -0.0645
+
+Ex3
+# A tibble: 1 x 1
+        r
+    <dbl>
+1 -0.0630
