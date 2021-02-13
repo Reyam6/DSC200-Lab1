@@ -2,7 +2,10 @@
 title: "Lab 01 - Hello R"
 author: "Ryam Radi"
 date: "1/2/2021"
-output: html_document
+output: 
+  html_document: 
+    fig_width: 14
+    fig_height: 12
 ---
 
 University ID: 2201001476
@@ -17,6 +20,8 @@ library(datasauRus)
 
 ### Lab Exercise
 EX1
+> head(datasaurus_dozen)
+
 # A tibble: 6 x 3
   dataset     x     y
   <chr>   <dbl> <dbl>
@@ -54,18 +59,30 @@ EX1
 13 x_shape      142
 
 Task2
+> dino_data <- datasaurus_dozen %>% filter(dataset == "dino")
+> ggplot(data = dino_data, mapping = aes(x = x, y = y)) + geom_point()
+> dino_data %>% summarize(r = cor(x, y))
+
 # A tibble: 1 x 1
         r
     <dbl>
 1 -0.0645
 
 Ex3
+> star_data <- datasaurus_dozen %>% filter(dataset == "star")
+> ggplot(data = star_data, mapping = aes(x = x, y = y)) + geom_point()
+> star_data %>% summarize(r = cor(x, y))
+
 # A tibble: 1 x 1
         r
     <dbl>
 1 -0.0630
 
 Ex4
+> circle_data <- datasaurus_dozen %>% filter(dataset == "circle")
+> ggplot(data = circle_data, mapping = aes(x = x, y = y)) + geom_point()
+> circle_data %>% summarize(r = cor(x, y))
+
 # A tibble: 1 x 1
         r
     <dbl>

@@ -203,7 +203,11 @@ library(datasauRus)</code></pre>
 </div>
 <div id="lab-exercise" class="section level3">
 <h3>Lab Exercise</h3>
-<p>EX1 # A tibble: 6 x 3 dataset x y <chr> <dbl> <dbl> 1 dino 55.4 97.2 2 dino 51.5 96.0 3 dino 46.2 94.5 4 dino 42.8 91.4 5 dino 40.8 88.3 6 dino 38.7 84.9</p>
+<p>EX1 &gt; head(datasaurus_dozen)</p>
+</div>
+<div id="a-tibble-6-x-3" class="section level1">
+<h1>A tibble: 6 x 3</h1>
+<p>dataset x y <chr> <dbl> <dbl> 1 dino 55.4 97.2 2 dino 51.5 96.0 3 dino 46.2 94.5 4 dino 42.8 91.4 5 dino 40.8 88.3 6 dino 38.7 84.9</p>
 <p>dataset x y<br />
 Length:1846 Min. :15.56 Min. : 0.01512<br />
 Class :character 1st Qu.:41.07 1st Qu.:22.56107<br />
@@ -214,9 +218,27 @@ Max. :98.29 Max. :99.69468</p>
 <pre><code>                Task1
                 # A tibble: 13 x 2</code></pre>
 <p>dataset n * <chr> <int> 1 away 142 2 bullseye 142 3 circle 142 4 dino 142 5 dots 142 6 h_lines 142 7 high_lines 142 8 slant_down 142 9 slant_up 142 10 star 142 11 v_lines 142 12 wide_lines 142 13 x_shape 142</p>
-<p>Task2 # A tibble: 1 x 1 r <dbl> 1 -0.0645</p>
-<p>Ex3 # A tibble: 1 x 1 r <dbl> 1 -0.0630</p>
-<p>Ex4 # A tibble: 1 x 1 r <dbl> 1 -0.0683</p>
+<p>Task2 &gt; dino_data &lt;- datasaurus_dozen %&gt;% filter(dataset == “dino”) &gt; ggplot(data = dino_data, mapping = aes(x = x, y = y)) + geom_point() &gt; dino_data %&gt;% summarize(r = cor(x, y))</p>
+</div>
+<div id="a-tibble-1-x-1" class="section level1">
+<h1>A tibble: 1 x 1</h1>
+<pre><code>    r
+&lt;dbl&gt;</code></pre>
+<p>1 -0.0645</p>
+<p>Ex3 &gt; star_data &lt;- datasaurus_dozen %&gt;% filter(dataset == “star”) &gt; ggplot(data = star_data, mapping = aes(x = x, y = y)) + geom_point() &gt; star_data %&gt;% summarize(r = cor(x, y))</p>
+</div>
+<div id="a-tibble-1-x-1-1" class="section level1">
+<h1>A tibble: 1 x 1</h1>
+<pre><code>    r
+&lt;dbl&gt;</code></pre>
+<p>1 -0.0630</p>
+<p>Ex4 &gt; circle_data &lt;- datasaurus_dozen %&gt;% filter(dataset == “circle”) &gt; ggplot(data = circle_data, mapping = aes(x = x, y = y)) + geom_point() &gt; circle_data %&gt;% summarize(r = cor(x, y))</p>
+</div>
+<div id="a-tibble-1-x-1-2" class="section level1">
+<h1>A tibble: 1 x 1</h1>
+<pre><code>    r
+&lt;dbl&gt;</code></pre>
+<p>1 -0.0683</p>
 </div>
 
 
